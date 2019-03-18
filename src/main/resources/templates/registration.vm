@@ -12,16 +12,38 @@
                 <span>Java Meetup Registration</span>
             </h1>
         </div>
-        <form>
-            Extend the form and bind the "Submit" button to store the entered information using the REST resource RegistrationResource.
-            The form should support to enter the following information:<br>
-            - Name (required)<br>
-            - Password (required)<br>
-            - Address (required)<br>
-            - Email (required)<br>
-            - Phone number
-            <p><input class="btn btn-default" type="submit" value="Submit"></p>
-        </form>
+        <div class="container">
+            <form method="post" action="/registration" >
+                Extend the form and bind the "Submit" button to store the entered information using the REST resource RegistrationResource.
+                The form should support to enter the following information:<br>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    #springBind( "command.name" )
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    #springBind( "command.password" )
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter the password" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    #springBind( "command.address" )
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter the address" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    #springBind( "command.email" )
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    #springBind( "command.phone" )
+                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter the phone number" >
+                </div>
+                <p><input class="btn btn-default" type="submit" value="Submit"></p>
+            </form>
+        </div>
         #parse ("common/footer.vm")
     </body>
 </html>

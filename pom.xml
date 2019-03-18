@@ -37,7 +37,7 @@
     </dependencies>
 
     <properties>
-        <spring-boot.version>1.3.6.RELEASE</spring-boot.version>
+        <spring-boot.version>1.4.7.RELEASE</spring-boot.version>
         <java.version>1.8</java.version>
         <start-class>com.k15t.pat.ApplicationBootstrap</start-class>
     </properties>

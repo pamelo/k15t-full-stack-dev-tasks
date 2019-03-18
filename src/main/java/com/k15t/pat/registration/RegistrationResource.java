@@ -1,22 +1,27 @@
 package com.k15t.pat.registration;
 
-import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 
-@Path("/registration")
-@Component
+@RestController
+@RequestMapping("/registration")
 public class RegistrationResource {
+
+    Logger logger = LoggerFactory.getLogger(RegistrationResource.class);
 
     // Extend the current resource to receive and store the data in memory.
     // Return a success information to the user including the entered information.
     // In case of the address split the information into a better format/structure
     // for better handling later on.
-    public Response save() {
+    @PostMapping
+    public Response save(@ModelAttribute Registration registration) {
+        logger.info("Begin: RegistrationResource.save() ", registration);
         return Response.ok().build();
     }
+
 
 }

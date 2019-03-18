@@ -21,6 +21,7 @@ public class RegistrationController {
 
         Template template = velocityEngine.getTemplate("templates/registration.vm");
         VelocityContext context = new VelocityContext();
+        context.put("registration", new Registration());
         StringWriter writer = new StringWriter();
         template.merge(context, writer);
 
